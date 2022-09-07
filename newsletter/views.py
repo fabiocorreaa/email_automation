@@ -11,10 +11,10 @@ def register(request):
         if form.is_valid():
             user = form.save(commit=False)
             user.save()
+            return render(request, 'newsletter/thanks.html', {"form": form})
         else:
             return render(request, 'newsletter/register.html', {"form": form, "mail": "false"})
-        return render(request, 'newsletter/thanks.html', {"form": form})
-            #return redirect('/')
+    
     else:
         form = SubForm()
     print(request.POST)
