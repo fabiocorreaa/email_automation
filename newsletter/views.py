@@ -14,7 +14,7 @@ def register(request):
             return render(request, 'newsletter/thanks.html', {"form": form})
         else:
             return render(request, 'newsletter/register.html', {"form": form, "mail": "false"})
-            #return redirect('/')
+    
     else:
         form = SubForm()
     print(request.POST)
